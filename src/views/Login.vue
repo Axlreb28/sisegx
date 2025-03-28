@@ -1,39 +1,42 @@
+<template>
+    <div class="login-page">
+        <div class="login-container">
+            <h1>Sistema de seguimiento de trámites municipales</h1>
+            <h2>Iniciar Sesión</h2>
+            
+            <form @submit.prevent="login">
+                <div class="input-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" v-model="email" placeholder="Ingresa tu correo" required>
+                </div>
+        
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" v-model="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+        
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        
+            <p>No tienes una cuenta? <a href="/register">Regístrate aquí</a></p>
+        </div>
+    </div>
+</template>
+  
 <script>
-import axios from 'axios'
-import { useRouter } from 'vue-router'
-
+import "@/assets/css/login.css"
 export default {
-    setup() {
-        const router = useRouter()
-        return { router }
-    },
     data() {
         return {
-            usuario: "",
+            email: "",
             password: ""
-        }
+        };
     },
     methods: {
-        async login() {
-            try {
-                const response = await axios.post('http://localhost/SISE/backend/api/login.php', {
-                    usuario: this.usuario,
-                    password: this.password
-                })
-
-                if (response.data.success) {
-                    // Guardar información de usuario en localStorage o Pinia
-                    localStorage.setItem('user', JSON.stringify(response.data.user))
-                    
-                    // Redirigir al dashboard o página principal
-                    this.router.push('/dashboard')
-                }
-            } catch (error) {
-                // Manejar errores de inicio de sesión
-                console.error('Error de inicio de sesión:', error.response.data.message)
-                // Mostrar mensaje de error al usuario
-            }
+        login() {
+            console.log("Intentando iniciar sesión con:", this.email, this.password);
+            // Aquí puedes agregar la lógica para enviar los datos al backend
         }
     }
-}
+};
 </script>
