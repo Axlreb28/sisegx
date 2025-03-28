@@ -18,7 +18,7 @@
       <div v-if="selected === 'dashboard'">
         <h2>Dashboard</h2>
         <p>Estadísticas, métricas, KPIs, etc.</p>
-        <GraficoBarra />
+        <GraficoBarra/>
       </div>
 
       <div v-else-if="selected === 'tramites'">
