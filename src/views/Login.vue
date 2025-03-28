@@ -24,7 +24,7 @@
 </template>
   
 <script>
-import "@/assets/login.css"
+import "@/assets/css/login.css"
 export default {
     data() {
         return {
