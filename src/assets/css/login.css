@@ -29,7 +29,7 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-    opacity: 0.035; /* Ajusta la transparencia aquí */
+    opacity: 0.015; /* Ajusta la transparencia aquí */
     z-index: 1;
     pointer-events: none;
 }
