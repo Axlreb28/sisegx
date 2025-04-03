@@ -41,9 +41,14 @@
         margin: 0 auto;
     }
 
+    .title {
+        background: #cccccc;
+        width: 110%;
+        padding: 10px;
+        height: 75px;
+    }
     .title h1 {
         color: black;
-        background: ;
     }
     
     .input-group {
