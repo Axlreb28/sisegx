@@ -89,6 +89,7 @@
         width: 70%;
         padding: 20px;
         box-sizing: border-box;
+        
     }
 </style>
 

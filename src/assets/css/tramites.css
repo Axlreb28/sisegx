@@ -24,6 +24,7 @@
 .title h1 {
   color: black;
   align-items: center;
+  margin-top: 20px;
 }
 
 .input-group {
@@ -55,10 +56,30 @@
 
 .button-group {
   display: flex;
-  justify-content: space-between;
-  width: 70%;
+  justify-content: flex-start; /* para alinearlos al inicio */
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+} 
+
+.button-group button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-group button {
+  padding: 10px;
+  background-color: #b11623;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  flex: 1;
 }
 
 /* La tabla de tramites */
@@ -99,7 +120,7 @@
 }
 
 .new-button {
-  background-color: var(--primary-color);
+  background-color:var(--primary-color);
   color: var(--white-color);
   border: none;
   border-radius: 5px;
@@ -109,6 +130,12 @@
   transition: var(--transition);
   display: flex;
   align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.new-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .new-button i {

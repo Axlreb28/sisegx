@@ -1,32 +1,31 @@
 <template>
 
-<div class="buscar_folio">
-        <div class="title">
-            <h1>Buscar Folio</h1>
-        </div>
-        <div class="input-group">
-            <label for="folio">Folio</label>
-            <input type="text" id="folio">
-        
-            <label for="estado">Estado de la solicitud</label>
-            <input type="text" id="estado">
-        
-            <label for="audiencia">Estado de la audiencia</label>
-            <input type="text" id="audiencia">
-        
-            <label for="fecha_desde">Fecha desde</label>
-            <input type="date" id="fecha_desde">
-
-            <label for="fecha_hasta">Fecha hasta</label>
-            <input type="date" id="fecha_hasta">
-        </div>
-        
-        <div class="button-group">
-            <button type="submit" @click.prevent="buscar">Buscar</button>
-            <button type="button" @click="mostrarTodos">Mostrar todos</button>
-            <button type="button" @click="exportar">Exportar</button>
-        </div>
+  <div class="buscar_folio">
+    <div class="title">
+        <h1>Buscar Folio</h1>
     </div>
+    <div class="input-group">
+        <label for="folio">Folio</label>
+        <input type="text" id="folio">
+    
+        <label for="estado">Estado de la solicitud</label>
+        <input type="text" id="estado">
+    
+        <label for="audiencia">Estado de la audiencia</label>
+        <input type="text" id="audiencia">
+    
+        <label for="fecha_desde">Fecha desde</label>
+        <input type="date" id="fecha_desde">
+        <label for="fecha_hasta">Fecha hasta</label>
+        <input type="date" id="fecha_hasta">
+    </div>
+    
+    <div class="button-group">
+        <button type="submit" @click.prevent="buscar">Buscar</button>
+        <button type="button" @click="mostrarTodos">Mostrar todos</button>
+        <button type="button" @click="exportar">Exportar</button>
+    </div>
+  </div>
 
   <div class="tramites-container">
     <SearchBar v-model="searchQuery" />
