@@ -64,7 +64,7 @@ export default {
               localStorage.setItem('user', JSON.stringify({ username: 'admin' }))
 
               // Redirigir a Inicio.vue
-              this.router.push('/inicio')
+              this.router.push('/')
           } else {
               this.errorMessage = "Usuario o contraseña incorrectos"
           }
