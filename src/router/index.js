@@ -1,68 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import MainLayout from '@/layouts/MainLayout.vue';
-import Dashboard from '@/views/Dashboard.vue';
-import Tramites from '@/views/Tramites.vue';
-import Reportes from '@/views/Reportes.vue';
-import Configuracion from '@/views/Configuracion.vue';
-import Login from '@/views/Login.vue';
-import Gestiones from '@/components/Gestiones.vue';
+import { createRouter, createWebHistory } from 'vue-router'
 
-const routes = [
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
-  },
-  {
-    path: '/',
-    component: MainLayout,
-    children: [
-      {
-        path: '',
-        name: 'Dashboard',
-        component: Dashboard
-      },
-      {
-        path: '/tramites',
-        name: 'Trámites',
-        component: Tramites
-      },
-      {
-        path: '/reportes',
-        name: 'Reportes',
-        component: Reportes
-      },
-      {
-        path: '/configuracion',
-        name: 'Configuración',
-        component: Configuracion
-      },
-      {
-        path: '/gestiones',
-        name: 'Gestiones',
-        component: Gestiones
-      }
-    ]
-  }
-];
+// Importa automáticamente todos los archivos en /routes
+const routeModules = import.meta.glob('./routes/*.js', { eager: true })
+const routes = Object.values(routeModules).flatMap(m => m.default)
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-});
+  routes,
+})
 
-// Guard de navegación para verificar autenticación
+// Guard de navegación
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/login'];
-  const authRequired = !publicPages.includes(to.path);
-  const loggedIn = localStorage.getItem('user');
+  const publicPages = ['/login']
+  const authRequired = !publicPages.includes(to.path)
+  const loggedIn = localStorage.getItem('user')
 
-  // Redirigir a login si no está autenticado y la ruta requiere autenticación
-  if (authRequired && !loggedIn) {
-    return next('/login');
-  }
+  if (authRequired && !loggedIn) return next('/login')
+  next()
+})
 
-  next();
-});
-
-export default router;
+export default router
