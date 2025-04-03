@@ -47,7 +47,8 @@
           '/dashboard': 'Dashboard',
           '/tramites': 'Trámites',
           '/reportes': 'Reportes',
-          '/configuracion': 'Configuración'
+          '/configuracion': 'Configuración',
+          '/configuracion/usuarios': 'Configuración > Usuarios'
         };
         
         return routes[this.$route.path] || '';
