@@ -44,7 +44,7 @@
       getCurrentSectionTitle() {
         // Obtener el título basado en la ruta actual
         const routes = {
-          '/': 'Dashboard',
+          '/dashboard': 'Dashboard',
           '/tramites': 'Trámites',
           '/reportes': 'Reportes',
           '/configuracion': 'Configuración'
