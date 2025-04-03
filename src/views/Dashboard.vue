@@ -14,7 +14,7 @@
           <i class="fas fa-arrow-up"></i> 12%
         </div>
       </div>
-      
+
       <div class="summary-card">
         <div class="card-icon" style="background-color: rgba(41, 44, 55, 0.2);">
           <i class="fas fa-check-circle" style="color: #292c37;"></i>
@@ -27,7 +27,7 @@
           <i class="fas fa-arrow-up"></i> 8%
         </div>
       </div>
-      
+
       <div class="summary-card">
         <div class="card-icon" style="background-color: rgba(159, 17, 27, 0.2);">
           <i class="fas fa-clock" style="color: #9f111b;"></i>
@@ -40,7 +40,7 @@
           <i class="fas fa-arrow-down"></i> 5%
         </div>
       </div>
-      
+
       <div class="summary-card">
         <div class="card-icon" style="background-color: rgba(0, 0, 0, 0.1);">
           <i class="fas fa-users" style="color: #000000;"></i>
@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Gráficos -->
     <div class="chart-row">
       <div class="chart-container">
@@ -66,7 +66,7 @@
         </div>
         <Bar :data="barData" :options="barOptions" />
       </div>
-      
+
       <div class="chart-container">
         <div class="chart-header">
           <h3>Distribución de trámites</h3>
@@ -77,7 +77,7 @@
         <Pie :data="pieData" :options="pieOptions" />
       </div>
     </div>
-    
+
     <div class="chart-row">
       <div class="chart-container">
         <div class="chart-header">
@@ -89,7 +89,7 @@
         <Line :data="lineData" :options="lineOptions" />
       </div>
     </div>
-    
+
     <div class="chart-row">
       <div class="chart-container">
         <div class="chart-header">
@@ -100,7 +100,7 @@
         </div>
         <Bar :data="horizontalBarData" :options="horizontalBarOptions" />
       </div>
-      
+
       <div class="chart-container">
         <div class="chart-header">
           <h3>Rendimiento por trimestre</h3>
@@ -130,11 +130,11 @@ import {
 import { Bar, Pie, Line, Doughnut } from 'vue-chartjs'
 
 ChartJS.register(
-  Title, 
-  Tooltip, 
-  Legend, 
-  BarElement, 
-  CategoryScale, 
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
@@ -143,8 +143,8 @@ ChartJS.register(
 
 export default {
   name: 'Dashboard',
-  components: { 
-    Bar, 
+  components: {
+    Bar,
     Pie,
     Line,
     Doughnut
@@ -160,7 +160,7 @@ export default {
       white: '#ffffff',       // Blanco
       background: '#f5f7fa'   // Fondo gris claro
     }
-    
+
     return {
       // 1. Gráfica de barras para trámites por mes
       barData: {
@@ -229,7 +229,7 @@ export default {
           }
         }
       },
-      
+
       // 2. Gráfica de pastel para distribución
       pieData: {
         labels: ['Categoría A', 'Categoría B', 'Categoría C', 'Categoría D'],
@@ -274,7 +274,7 @@ export default {
           }
         }
       },
-      
+
       // 3. Gráfica de línea para tendencia anual
       lineData: {
         labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
@@ -356,7 +356,7 @@ export default {
           }
         }
       },
-      
+
       // 4. Gráfica de barras horizontales para comparativa
       horizontalBarData: {
         labels: ['Departamento A', 'Departamento B', 'Departamento C', 'Departamento D', 'Departamento E'],
@@ -417,7 +417,7 @@ export default {
           }
         }
       },
-      
+
       // 5. Gráfica de dona para rendimiento trimestral
       doughnutData: {
         labels: ['Q1', 'Q2', 'Q3', 'Q4'],
@@ -425,7 +425,7 @@ export default {
           {
             backgroundColor: [
               colors.dark,
-              colors.accent, 
+              colors.accent,
               colors.primary,
               colors.secondary
             ],
@@ -590,7 +590,7 @@ export default {
   .summary-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .chart-row {
     grid-template-columns: 1fr;
   }
