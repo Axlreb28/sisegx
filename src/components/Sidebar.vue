@@ -38,7 +38,7 @@
     data() {
       return {
         menuItems: [
-          { name: 'dashboard', label: 'Dashboard', icon: 'fas fa-chart-line', path: '/' },
+          { name: 'dashboard', label: 'Dashboard', icon: 'fas fa-chart-line', path: '/dashboard' },
           { name: 'tramites', label: 'Trámites', icon: 'fas fa-file-alt', path: '/tramites' },
           { name: 'gestiones', label: 'Gestiones', icon: 'fas fa-list', path: '/gestiones' },
           { name: 'reportes', label: 'Reportes', icon: 'fas fa-file-contract', path: '/reportes' },

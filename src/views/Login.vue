@@ -56,19 +56,20 @@ export default {
         }
     },
     methods: {
-      login() {
-          this.errorMessage = ""
+        login() {
+  this.errorMessage = ""
 
-          if (this.usuario === 'admin' && this.password === 'admin') {
-              // Simulamos un login exitoso guardando algo en localStorage
-              localStorage.setItem('user', JSON.stringify({ username: 'admin' }))
+  if (this.usuario === 'admin' && this.password === 'admin') {
+      // Simulamos un login exitoso guardando algo en localStorage
+      localStorage.setItem('user', JSON.stringify({ username: 'admin' }))
 
-              // Redirigir a Inicio.vue
-              this.router.push('/')
-          } else {
-              this.errorMessage = "Usuario o contraseña incorrectos"
-          }
-      }
+      // Redirige a '/dashboard' después de loguearse exitosamente
+      this.router.push('/dashboard')
+  } else {
+      this.errorMessage = "Usuario o contraseña incorrectos"
+  }
+}
+
     }
 }
 </script>
