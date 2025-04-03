@@ -4,7 +4,7 @@ export default [
       component: () => import('@/layouts/MainLayout.vue'),
       children: [
         {
-          path: '',
+          path: 'dashboard', // ← esta es la clave
           name: 'Dashboard',
           component: () => import('@/views/Dashboard.vue'),
         }
