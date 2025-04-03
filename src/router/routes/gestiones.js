@@ -6,7 +6,8 @@ export default [
         {
           path: 'gestiones',
           name: 'Gestiones',
-          component: () => import('@/views/Gestiones.vue'),
+          component: () => import('@/components/Gestiones.vue')
+,
         }
       ]
     }
