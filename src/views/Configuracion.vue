@@ -14,7 +14,7 @@
                 <i class="fas fa-user-cog"></i>
               </div>
               <div class="config-details">
-                <h4>Perfiles de Usuario</h4>
+                <h4>Usuarios</h4>
                 <p>Administrar Usuarios</p>
                 <div class="toggle-switch">
                   <input type="checkbox" id="user-profiles" checked>
