@@ -1,3 +1,4 @@
+// C:\xampp\htdocs\SISE\src\router\index.js
 import { createRouter, createWebHistory } from 'vue-router'
 
 // Importa automáticamente todos los archivos en /routes
@@ -6,7 +7,7 @@ const routes = Object.values(routeModules).flatMap(m => m.default)
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes, // Aquí se añaden todas las rutas, incluidas las de dashboard.js
 })
 
 // Guard de navegación
@@ -20,3 +21,4 @@ router.beforeEach((to, from, next) => {
 })
 
 export default router
+
