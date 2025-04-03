@@ -142,7 +142,7 @@ ChartJS.register(
 )
 
 export default {
-  name: 'Dashboard',
+  name:'Dashboard',
   components: {
     Bar,
     Pie,
