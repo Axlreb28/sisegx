@@ -15,8 +15,8 @@
               <font-awesome-icon :icon="['fas', 'user-shield']" />
             </div>
             <div class="config-details">
-              <h4>Perfiles de Usuario</h4>
-              <p>Administrar roles y permisos</p>
+              <h4>Usuarios</h4>
+              <p>Administrar usuarios</p>
             </div>
           </div>
           
@@ -25,8 +25,8 @@
               <font-awesome-icon :icon="['fas', 'database']" />
             </div>
             <div class="config-details">
-              <h4>Respaldo de Datos</h4>
-              <p>Configuración de copias de seguridad</p>
+              <h4>Roles</h4>
+              <p>Administrar roles</p>
             </div>
           </div>
           
@@ -35,8 +35,8 @@
               <font-awesome-icon :icon="['fas', 'palette']" />
             </div>
             <div class="config-details">
-              <h4>Tema de la Interfaz</h4>
-              <p>Personalizar apariencia</p>
+              <h4>Unidades</h4>
+              <p>Administrar unidades</p>
             </div>
           </div>
         </div>
