@@ -15,7 +15,7 @@
               </div>
               <div class="config-details">
                 <h4>Perfiles de Usuario</h4>
-                <p>Administrar roles y permisos</p>
+                <p>Administrar Usuarios</p>
                 <div class="toggle-switch">
                   <input type="checkbox" id="user-profiles" checked>
                   <label for="user-profiles"></label>
@@ -28,8 +28,8 @@
                 <i class="fas fa-database"></i>
               </div>
               <div class="config-details">
-                <h4>Respaldo de Datos</h4>
-                <p>Configuración de copias de seguridad</p>
+                <h4>Roles</h4>
+                <p>Administrar roles y acciones</p>
                 <div class="toggle-switch">
                   <input type="checkbox" id="data-backup">
                   <label for="data-backup"></label>
@@ -42,8 +42,8 @@
                 <i class="fas fa-palette"></i>
               </div>
               <div class="config-details">
-                <h4>Tema de la Interfaz</h4>
-                <p>Personalizar apariencia</p>
+                <h4>Unidades</h4>
+                <p>Gestion de unidades</p>
                 <div class="toggle-switch">
                   <input type="checkbox" id="interface-theme">
                   <label for="interface-theme"></label>

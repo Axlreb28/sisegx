@@ -5,7 +5,7 @@ import Tramites from '@/views/Tramites.vue';
 import Reportes from '@/views/Reportes.vue';
 import Configuracion from '@/views/Configuracion.vue';
 import Login from '@/views/Login.vue';
-import Gestiones from '@/views/Gestiones.vue';
+import Gestiones from '@/components/Gestiones.vue';
 
 const routes = [
   {
