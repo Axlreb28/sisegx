@@ -5,6 +5,7 @@ import Tramites from '@/views/Tramites.vue';
 import Reportes from '@/views/Reportes.vue';
 import Configuracion from '@/views/Configuracion.vue';
 import Login from '@/views/Login.vue';
+import Gestiones from '@/views/Gestiones.vue';
 
 const routes = [
   {
@@ -35,6 +36,11 @@ const routes = [
         path: '/configuracion',
         name: 'Configuración',
         component: Configuracion
+      },
+      {
+        path: '/gestiones',
+        name: 'Gestiones',
+        component: Gestiones
       }
     ]
   }

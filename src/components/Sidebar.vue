@@ -40,6 +40,7 @@
         menuItems: [
           { name: 'dashboard', label: 'Dashboard', icon: 'fas fa-chart-line', path: '/' },
           { name: 'tramites', label: 'Trámites', icon: 'fas fa-file-alt', path: '/tramites' },
+          { name: 'gestiones', label: 'Gestiones', icon: 'fas fa-list', path: '/gestiones' },
           { name: 'reportes', label: 'Reportes', icon: 'fas fa-file-contract', path: '/reportes' },
           { name: 'configuracion', label: 'Configuración', icon: 'fas fa-cog', path: '/configuracion' }
         ]
