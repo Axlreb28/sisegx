@@ -1,13 +1,28 @@
 <template>
   <div class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
     <h2 class="text-xl font-bold mb-4">Nuevo Trámite</h2>
+    <h3>Datos de la persona solicitante</h3>
     <form @submit.prevent="saveTramite">
       <div class="mb-4">
-        <label class="block text-gray-700">Tipo de trámite</label>
+        <label class="block text-gray-700">Nombre(s)</label>
+        <input v-model="newTramite.asunto" type="text" class="w-full px-3 py-2 border rounded-lg" />
+        <label class="block text-gray-700">Apellido paterno:</label>
+        <input v-model="newTramite.asunto" type="text" class="w-full px-3 py-2 border rounded-lg" />
+        <label class="block text-gray-700">Apellido materno:</label>
+        <input v-model="newTramite.asunto" type="text" class="w-full px-3 py-2 border rounded-lg" />
+        <label class="block text-gray-700">Fecha de nacimiento:</label>
+        <input v-model="newTramite.asunto" type="date" class="w-full px-3 py-2 border rounded-lg" />
+        <label class="block text-gray-700">Sexo:</label>
         <select v-model="newTramite.tipo" class="w-full px-3 py-2 border rounded-lg">
-          <option value="solicitud">Solicitud</option>
-          <option value="reclamo">Reclamo</option>
+          <option value=""></option>
+          <option value="mujer">Mujer</option>
+          <option value="hombre">Hombre</option>
         </select>
+      </div>
+      <h3>Domicilio</h3>
+      <div class="mb-4">
+        <label class="block text-gray-700">Fecha de nacimiento:</label>
+        <input v-model="newTramite.asunto" type="date" class="w-full px-3 py-2 border rounded-lg" />
       </div>
 
       <div class="mb-4">
@@ -76,3 +91,4 @@ body {
   background-color: #f3f4f6;
 }
 </style>
+
