@@ -10,7 +10,7 @@
         class="search-input"
       />
     </div>
-    <router-link to="formulario/Form.vue" class="new-button">
+    <router-link to="/formulario" class="new-button">
       <i class="fas fa-plus"></i> Nuevo Trámite
     </router-link>
   </div>

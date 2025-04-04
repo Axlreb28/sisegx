@@ -193,6 +193,7 @@ export default {
 };
 </script>
 
+
 <style>
 @import '@/assets/css/tramites.css';
 </style>
