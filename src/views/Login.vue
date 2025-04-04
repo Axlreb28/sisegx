@@ -27,21 +27,28 @@
                     >
                 </div>
 
-                <!-- Añadir mensaje de error -->
+                <!-- Mensaje de error -->
                 <div v-if="errorMessage" class="error-message">
                     {{ errorMessage }}
                 </div>
 
-                <button type="submit">Iniciar Sesión</button>
+                <!-- Indicador de carga -->
+                <div v-if="loading" class="loading-indicator">
+                    Verificando credenciales...
+                </div>
+
+                <button type="submit" :disabled="loading">Iniciar Sesión</button>
             </form>
 
             <p>No tienes una cuenta? <a href="/register">Regístrate aquí</a></p>
         </div>
     </div>
 </template>
+
 <script>
 import "@/assets/css/login.css"
 import { useRouter } from 'vue-router'
+import axios from 'axios'
 
 export default {
     setup() {
@@ -52,24 +59,44 @@ export default {
         return {
             usuario: "",
             password: "",
-            errorMessage: ""
+            errorMessage: "",
+            loading: false
         }
     },
     methods: {
-        login() {
-  this.errorMessage = ""
+        async login() {
+            this.errorMessage = ""
+            this.loading = true
 
-  if (this.usuario === 'admin' && this.password === 'admin') {
-      // Simulamos un login exitoso guardando algo en localStorage
-      localStorage.setItem('user', JSON.stringify({ username: 'admin' }))
+            try {
+                const response = await axios.post('http://localhost/SISE/backend/api/login.php', {
+                    usuario: this.usuario,
+                    password: this.password
+                })
 
-      // Redirige a '/dashboard' después de loguearse exitosamente
-      this.router.push('/dashboard')
-  } else {
-      this.errorMessage = "Usuario o contraseña incorrectos"
-  }
-}
-
+                if (response.data.success) {
+                    // Guardar datos del usuario en localStorage
+                    localStorage.setItem('user', JSON.stringify(response.data.user))
+                    localStorage.setItem('authToken', Date.now()) // Token simple para validación
+                    
+                    // Redirigir al dashboard
+                    this.router.push('/dashboard')
+                } else {
+                    this.errorMessage = response.data.message || "Error durante el inicio de sesión"
+                }
+            } catch (error) {
+                if (error.response) {
+                    // Error con respuesta del servidor
+                    this.errorMessage = error.response.data.message || "Credenciales inválidas"
+                } else {
+                    // Error de conexión u otro problema
+                    this.errorMessage = "Error de conexión al servidor"
+                    console.error("Error:", error)
+                }
+            } finally {
+                this.loading = false
+            }
+        }
     }
 }
 </script>
@@ -83,5 +110,11 @@ export default {
     margin-bottom: 15px;
     border-radius: 4px;
     text-align: center;
+}
+
+.loading-indicator {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--primary-color);
 }
 </style>

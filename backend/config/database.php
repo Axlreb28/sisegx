@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = 'zealous-curran.192-99-212-154.plesk.page';
-    private $db_name = 'gestionsiseg';
-    private $username = 'gestion';
-    private $password = 'A#AI3y~eyk20avio';
+    private $db_name = 'siseggestion';
+    private $username = 'sisegestion';
+    private $password = 'AI3y~eyk20avio';
     private $port = 3306;
     public $conn;
 
