@@ -1,6 +1,6 @@
 <?php
 class Database {
-    private $host = 'zealous-curran.192-99-212-154.plesk.page';
+    private $host = 'strange-heisenberg.192-99-212-154.plesk.page';
     private $db_name = 'siseggestion';
     private $username = 'sisegestion';
     private $password = 'AI3y~eyk20avio';
